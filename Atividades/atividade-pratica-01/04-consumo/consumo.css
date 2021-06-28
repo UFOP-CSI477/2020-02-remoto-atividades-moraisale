@@ -1,0 +1,35 @@
+h1 {
+  text-align: center;
+  margin: 20px auto;
+}
+
+#tab-cadastro {
+  color: black;
+  margin: 20px auto;
+  text-align: center;
+  vertical-align: center;
+}
+
+th {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.linha .coluna {
+  border: 1px solid black;
+  padding: 3px;
+}
+
+#inputs {
+  display: flex;
+  flex-direction: column;
+  padding: 100px;
+}
+
+input {
+  width: 20%;
+}
+
+#btn-cadastrar {
+  margin-top: 20px;
+}

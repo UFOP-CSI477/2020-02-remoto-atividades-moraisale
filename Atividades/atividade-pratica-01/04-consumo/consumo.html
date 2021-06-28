@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="consumo.css" />
+    <title>Consumo</title>
+  </head>
+
+  <body>
+    <h1>Informações sobre consumo</h1>
+
+    <div id="inputs">
+      <label for="qtd-combustivel"> Litros abastecidos:</label>
+      <input type="number" name="qtd-combustivel" id="qtd-combustivel" />
+
+      <label for="qtd-combustivel"> Quilometragem percorrida:</label>
+      <input type="number" name="" id="qtd-km" />
+
+      <input
+        type="submit"
+        value="Cadastrar"
+        id="btn-cadastrar"
+        onclick="cadastrar()"
+      />
+      <input type="submit" value="Finalizar" onclick="finalizar()" />
+    </div>
+
+    <table id="tab-cadastro" class="table-bordered" hidden>
+      <thead>
+        <tr>
+          <th>Litros abastecidos</th>
+          <th>Km's percorridos</th>
+          <th>Consumo médio (km/l)</th>
+        </tr>
+      </thead>
+    </table>
+
+    <div id="resultado"></div>
+
+    <script src="consumo.js"></script>
+  </body>
+</html>
