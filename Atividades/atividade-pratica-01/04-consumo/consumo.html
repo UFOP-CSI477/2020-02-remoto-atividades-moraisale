@@ -17,33 +17,42 @@
   <body>
     <h1>Informações sobre consumo</h1>
 
-    <div id="inputs">
-      <label for="qtd-combustivel"> Litros abastecidos:</label>
-      <input type="number" name="qtd-combustivel" id="qtd-combustivel" />
+    <div id="container">
+      <div id="inputs">
+        <label for="qtd-combustivel"> Litros abastecidos:</label>
+        <input type="number" name="qtd-combustivel" id="qtd-combustivel" />
 
-      <label for="qtd-combustivel"> Quilometragem percorrida:</label>
-      <input type="number" name="" id="qtd-km" />
+        <label for="qtd-combustivel"> Quilometragem percorrida:</label>
+        <input type="number" name="" id="qtd-km" />
 
-      <input
-        type="submit"
-        value="Cadastrar"
-        id="btn-cadastrar"
-        onclick="cadastrar()"
-      />
-      <input type="submit" value="Finalizar" onclick="finalizar()" />
+        <input
+          type="submit"
+          value="Cadastrar"
+          id="btn-cadastrar"
+          onclick="cadastrar()"
+          class="btn btn-secondary"
+        />
+
+        <input
+          type="button"
+          value="Resultados"
+          class="btn btn-secondary"
+          onclick="finalizar()"
+        />
+      </div>
+
+      <div id="resultado">
+        <table id="tab-cadastro" class="table-bordered" hidden>
+          <thead>
+            <tr>
+              <th>Litros abastecidos</th>
+              <th>Km's percorridos</th>
+              <th>Consumo médio (km/l)</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
     </div>
-
-    <table id="tab-cadastro" class="table-bordered" hidden>
-      <thead>
-        <tr>
-          <th>Litros abastecidos</th>
-          <th>Km's percorridos</th>
-          <th>Consumo médio (km/l)</th>
-        </tr>
-      </thead>
-    </table>
-
-    <div id="resultado"></div>
 
     <script src="consumo.js"></script>
   </body>

@@ -17,12 +17,12 @@ function cadastrar() {
   else {
 
     tabela.hidden = false
-    
+
     let linha = document.createElement('tr')
     linha.className = 'linha'
 
     let col1 = document.createElement('td')
-    col1.className = 'coluna' 
+    col1.className = 'coluna'
 
     let col2 = document.createElement('td')
     col2.className = 'coluna'
@@ -38,7 +38,7 @@ function cadastrar() {
 
     col1.innerHTML = litros.value
     col2.innerHTML = km.value
-    col3.innerHTML = consumo
+    col3.innerHTML = consumo.toFixed(1)
 
     const carro = {
       litrosAbastecidos: litros.value,
@@ -52,7 +52,6 @@ function cadastrar() {
     km.value = ""
     consumo.value = ""
   }
-
 }
 
 function finalizar() {
@@ -60,13 +59,25 @@ function finalizar() {
   var somaLitros = 0
   var somaKm = 0
   var somaConsumo = 0
+  var contador = 0
 
   for (i in carros) {
     somaLitros += Number(carros[i].litrosAbastecidos)
     somaKm += Number(carros[i].kmPercorridos)
     somaConsumo += Number(carros[i].consumoMedio)
+    contador++
   }
-  window.alert(`Total de litros abastecidos: ${somaLitros} Total de km's percorridos ${somaKm} Total de consumo ${somaConsumo}`)
+
+  var mediaLitros = somaLitros / contador
+  var mediaKm = somaKm / contador
+  var mediaConsumo = somaConsumo / contador
+
+  window.alert(`
+  Total de combustível utilizado: ${somaLitros.toFixed(2)}
+  Total de km's percorridos ${somaKm.toFixed(2)}
+  Média de consumo de combustível ${mediaLitros.toFixed(2)}
+  Media de km's rodados: ${mediaKm.toFixed(1)}
+  Media de desempenho (km/l): ${mediaConsumo.toFixed(2)}`)
 
 }
 
