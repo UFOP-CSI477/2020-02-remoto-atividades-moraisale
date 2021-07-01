@@ -10,21 +10,23 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="consumo.css" />
-    <link rel="shortcut icon" href="logo-gasolina.png" type="image/x-icon" />
-    <title>Consumo</title>
+    <link rel="shortcut icon" href="logo-corrida.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="corrida.css" />
+    <title>Corrida Rolimã</title>
   </head>
-
   <body>
     <h1>Informações sobre consumo</h1>
 
     <div id="container">
       <div id="inputs">
-        <label for="qtd-combustivel"> Litros abastecidos:</label>
-        <input type="number" name="qtd-combustivel" id="qtd-combustivel" />
+        <label for="largada"> Largada</label>
+        <input type="number" name="largada" id="largada" />
 
-        <label for="qtd-combustivel"> Quilometragem percorrida:</label>
-        <input type="number" name="" id="qtd-km" />
+        <label for="competidor"> Competidor(a)</label>
+        <input type="text" name="competidor" id="competidor" />
+
+        <label for="tempo"> Tempo (s)</label>
+        <input type="number" name="tempo" id="tempo" />
 
         <input
           type="submit"
@@ -43,18 +45,20 @@
       </div>
 
       <div id="resultado">
-        <table id="tab-cadastro" class="table-bordered" hidden>
+        <table id="tab-resultado" class="table-bordered" hidden>
           <thead>
             <tr>
-              <th>Litros abastecidos</th>
-              <th>Km's percorridos</th>
-              <th>Consumo médio (km/l)</th>
+              <th>Posição</th>
+              <th>Largada/th></th>
+              <th>Competidor</th>
+              <th>Tempo (s)</th>
+              <th>Resultado (s)</th>
             </tr>
           </thead>
         </table>
       </div>
     </div>
 
-    <script src="consumo.js"></script>
+    <script src="corrida.js"></script>
   </body>
 </html>

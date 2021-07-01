@@ -9,7 +9,12 @@ function enviar() {
   var valor = document.getElementById('valor')
   var data = document.getElementById('data')
 
-  const transacao = {
+  if (chave.value == 0 || valor.value == 0 || data.value == 0) {
+    window.alert('Preencha corretamente todos os dados!')
+  }
+
+  else {
+    const transacao = {
     infoOperacao: operacao.value,
     infoValor: valor.value,
   }
@@ -21,6 +26,8 @@ function enviar() {
   chave.value = ""
   valor.value = ""
   data.value = ""
+  }
+  
 }
 
 function finalizar () {
@@ -46,7 +53,7 @@ function finalizar () {
       somaEnviados += Number(transacoes[i].infoValor)
       saldoFinalEnviado.innerHTML = `Saldo enviado acumulado: ${somaEnviados}`
     }
-    else if (transacoes[i].infoOperacao == 'Receber')
+    else if(transacoes[i].infoOperacao == 'Receber') {
       contadorRecebidos++
       numeroRecebidos.innerHTML = `Numero de transações: ${contadorRecebidos}`
       
@@ -54,12 +61,39 @@ function finalizar () {
       saldoFinalRecebido.innerHTML = `Saldo recebido acumulado: ${somaRecebidos}`
     }
 
+  }
+    
+
     var saldoTotal = document.getElementById('saldo-total')
-    var soma = saldoFinalRecebido - saldoFinalEnviado
-    saldoTotal.innerHTML = `Controle Pix - Saldo: ${soma.value}`
+    var soma = somaRecebidos - somaEnviados
+    saldoTotal.innerHTML = `Controle Pix - Seu saldo atual: R$${soma}`
 
 }
 
+function limparSelect(campo) {
+  while (campo.length > 1) {
+      campo.remove(1);
+  }
+}
 
+function preencherBancos(data) {
+  let listaBancos = document.getElementById("select-banco");
+  // limparSelect(listaBancos)
+
+  for (i in data) {
+      const { isbp, code, fullName } = data[i];
+      let option = document.createElement("option");
+
+      option.value = isbp;
+      option.innerHTML = `${code}-${fullName}`;
+      listaBancos.appendChild(option);
+  }
+}
+
+function carregarBancos() {
+  fetch("https://brasilapi.com.br/api/banks/v1")
+        .then(response => response.json())
+        .then(data => preencherBancos(data))
+}
 
 

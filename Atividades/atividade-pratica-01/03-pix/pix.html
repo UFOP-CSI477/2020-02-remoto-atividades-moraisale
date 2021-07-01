@@ -11,10 +11,14 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="pix.css" />
+    <link rel="shortcut icon" href="logo-pix.png" type="image/x-icon">
     <title>Pix</title>
+
   </head>
+  
   <body>
-    <h1 id="saldo-total">Controle Pix - Saldo:</h1>
+
+    <h1 id="saldo-total">Controle Pix</h1>
 
     <div id="container">
       <div id="envio">
@@ -46,13 +50,14 @@
           name="banco"
           class="form-select form-select-sm"
           id="select-banco"
+          onclick="carregarBancos()"
         >
           <option value="selecione">Selecione</option>
         </select>
 
 
         <label for="chave">Chave</label>
-        <input type="text" name="chave" id="chave" class="input-group mb-3">
+        <input type="text" name="chave" id="chave" class="input-group mb-3" >
 
         <label for="valor">Valor</label>
         <input type="number" name="valor" id="valor" class="input-group mb-3">
@@ -82,9 +87,9 @@
 
     </div>
 
-    
   </div>
 
     <script src="pix.js"></script>
+    
   </body>
 </html>

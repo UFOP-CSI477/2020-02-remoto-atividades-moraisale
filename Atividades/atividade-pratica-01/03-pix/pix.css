@@ -6,7 +6,10 @@ h1 {
 h3 {
   text-align: center;
   margin: 30px;
-  color: whitesmoke;
+  color: white;
+}
+h6 {
+  color: white;
 }
 body {
   background-color: rgb(5, 68, 68);
@@ -61,7 +64,7 @@ body {
 #chave,
 #valor,
 #data {
-  margin: auto auto;
+  margin: auto;
   width: 90%;
   height: 30px;
 }

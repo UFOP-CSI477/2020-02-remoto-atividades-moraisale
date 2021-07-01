@@ -1,0 +1,37 @@
+#container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  margin: 40px auto;
+}
+th {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.linha .coluna {
+  border: 1px solid black;
+  padding: 3px;
+}
+
+#inputs {
+  display: flex;
+  flex-direction: column;
+  padding: 100px;
+  border-right: 1px solid black;
+  padding-right: 250px;
+}
+
+input {
+  width: 100%;
+}
+
+#btn-cadastrar {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
