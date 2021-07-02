@@ -15,11 +15,11 @@
     <title>Corrida Rolimã</title>
   </head>
   <body>
-    <h1>Informações sobre consumo</h1>
+    <h1>Corrida de Rolimã</h1>
 
     <div id="container">
       <div id="inputs">
-        <label for="largada"> Largada</label>
+        <label for="largada"> Posição de largada</label>
         <input type="number" name="largada" id="largada" />
 
         <label for="competidor"> Competidor(a)</label>
@@ -32,8 +32,8 @@
           type="submit"
           value="Cadastrar"
           id="btn-cadastrar"
-          onclick="cadastrar()"
           class="btn btn-secondary"
+          onclick="cadastrar()"
         />
 
         <input
@@ -45,13 +45,25 @@
       </div>
 
       <div id="resultado">
-        <table id="tab-resultado" class="table-bordered" hidden>
+        <table id="tab-inicio" class="table-bordered">
           <thead>
             <tr>
-              <th>Posição</th>
-              <th>Largada/th></th>
-              <th>Competidor</th>
-              <th>Tempo (s)</th>
+              <th>Largada</th>
+              <th>Competidor(a)</th>
+              <th>Tempo</th>
+              <th>Posição Final (s)</th>
+              <th>Resultado (s)</th>
+            </tr>
+          </thead>
+        </table>
+
+        <table id="tab-resultado" class="table-bordered">
+          <thead>
+            <tr>
+              <th>Largada</th>
+              <th>Competidor(a)</th>
+              <th>Tempo</th>
+              <th>Posição Final (s)</th>
               <th>Resultado (s)</th>
             </tr>
           </thead>

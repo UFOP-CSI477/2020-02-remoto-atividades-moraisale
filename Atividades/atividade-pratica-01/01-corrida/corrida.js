@@ -1,61 +1,95 @@
 var competidores = []
 
 function cadastrar() {
-  let tabela = document.getElementById('tab-resultado')
+
+  let tabela = document.getElementById('tab-inicio')
   let linhas = tabela.getElementsByTagName('tr')
 
   let largada = document.getElementById('largada')
   let nomeCompetidor = document.getElementById('competidor')
   let tempo = document.getElementById('tempo')
 
-  if (linhas.length < 6) {
-    if (largada.length == 0 || nomeCompetidor.length == 0 || tempo.length == 0) {
-      window.alert('Preencha os campos corretamente!')
+  // array comeca contar no 0, então 3 itens vai ate o 2.
+  // se tiver mais de (3 itens) ele retorna o erro e para a funcão
+  if (competidores.length > 2) {
+    return window.alert('Número máximo de competidores cadastrados!');
+  }
 
-      document.getElementById("largada").value = ""
-      document.getElementById("nomeCompetidor").value = ""
-      document.getElementById("tempo").value = ""
-    } 
-    else {
-      const linhaTabela = document.createElement('tr')
+  // veirifica se todos os campos estão preenchidos.
+  if (largada.value === "" || nomeCompetidor.value === "" || tempo.value === "") {
+    largada.value = ""
+    nomeCompetidor.value = ""
+    tempo.value = ""
+    return window.alert('Preencha todos os dados!')
+    }   
 
-      const col1 = document.createElement('td')
-      const col2 = document.createElement('td')
-      const col3 = document.createElement('td')
-      const col4 = document.createElement('td')
-      const col5 = document.createElement('td')
 
-      linhaTabela.appendChild(col1)
-      linhaTabela.appendChild(col2)
-      linhaTabela.appendChild(col3)
-      linhaTabela.appendChild(col4)
-      linhaTabela.appendChild(col5)
+  // se todos os campos estão ok, ele vai add o camarada
+    const linhaTabela = document.createElement('tr')
+      
+    const col1 = document.createElement('td')
+    const col2 = document.createElement('td')
+    const col3 = document.createElement('td')
+    const col4 = document.createElement('td')
+    const col5 = document.createElement('td')
 
-      tabela.appendChild(linhaTabela)
+    linhaTabela.appendChild(col1)
+    linhaTabela.appendChild(col2)
+    linhaTabela.appendChild(col3)
+    linhaTabela.appendChild(col4)
+    linhaTabela.appendChild(col5)
 
-      col1.innerHTML = start
-      col2.innerHTML = competitor
-      col3.innerHTML = time
-      col4.innerHTML = 'a'
-      col5.innerHTML = 'b'
+    tabela.appendChild(linhaTabela)
 
-      const competidor = {
-        largada: largada,
-        nomeCompetidor: nomeCompetidor,
-        tempo: tempo,
-      }
+    col1.innerHTML = largada.value
+    col2.innerHTML = nomeCompetidor.value
+    col3.innerHTML = tempo.value
+    col4.innerHTML = "-"
+    col5.innerHTML = "-"
 
-      competidores.push(competidor)
-
-      largada.value = ""
-      nomeCompetidor.value = ""
-      tempo.value = ""
-
+    // pegando o value dos campos
+    const competidor = {
+      largadaRes: largada.value,
+      nomeCompetidorRes: nomeCompetidor.value,
+      tempoRes: tempo.value
     }
+        
+    largada.value = ""
+    nomeCompetidor.value = ""
+    tempo.value = ""
+
+    return competidores.push(competidor)
+  }
 
 
-
-  
 function finalizar () { 
 
+  let tabelaResultado = document.getElementById('tab-resultado')
+  competidores.map(competidor => {
+    const linhaTabelaRes = document.createElement('tr')
+
+    const colRes1 = document.createElement('td')
+    const colRes2 = document.createElement('td')
+    const colRes3 = document.createElement('td')
+    const colRes4 = document.createElement('td')
+    const colRes5 = document.createElement('td')
+
+   
+
+    linhaTabelaRes.appendChild(colRes1)
+    linhaTabelaRes.appendChild(colRes2)
+    linhaTabelaRes.appendChild(colRes3)
+    linhaTabelaRes.appendChild(colRes4)
+    linhaTabelaRes.appendChild(colRes5)
+
+    colRes1.innerHTML = competidor.largadaRes
+    colRes2.innerHTML = competidor.nomeCompetidorRes
+    colRes3.innerHTML = competidor.tempoRes
+    colRes4.innerHTML = "asdasd"
+    colRes5.innerHTML = "rererer"
+
+    tabelaResultado.appendChild(linhaTabelaRes)
+
+    
+  })
 }

@@ -46,6 +46,8 @@ function cadastrar() {
       consumoMedio: consumo
     }
 
+  
+
     carros.push(carro)
 
     litros.value = ""
