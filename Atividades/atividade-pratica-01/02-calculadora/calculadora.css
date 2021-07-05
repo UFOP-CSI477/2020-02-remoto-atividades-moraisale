@@ -4,13 +4,6 @@ body {
   background-color: teal;
 }
 
-#linha {
-  width: 40%;
-  height: 2px;
-  background-color: black;
-  margin: auto;
-}
-
 #calculadora {
   margin: 50px auto;
   background-color: black;

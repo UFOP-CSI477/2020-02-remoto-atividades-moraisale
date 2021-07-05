@@ -1,19 +1,20 @@
+// cria o array para armazenar cada transação
 var transacoes = []
 
 function enviar() {
 
-  var tipoChave = document.getElementById('select-chave')
   var operacao = document.getElementById('select-operacao')
-  var banco = document.getElementById('select-banco')
   var chave = document.getElementById('chave')
   var valor = document.getElementById('valor')
   var data = document.getElementById('data')
 
+  // verifica se todos campos foram preenchidos
   if (chave.value == 0 || valor.value == 0 || data.value == 0) {
     window.alert('Preencha corretamente todos os dados!')
   }
 
   else {
+    // cria o objeto com os dados da transação enviada
     const transacao = {
     infoOperacao: operacao.value,
     infoValor: valor.value,
@@ -27,7 +28,6 @@ function enviar() {
   valor.value = ""
   data.value = ""
   }
-  
 }
 
 function finalizar () {
@@ -44,6 +44,7 @@ function finalizar () {
   var somaEnviados = 0
   var somaRecebidos = 0
 
+  // calcular e retorna na div de resultado os dados sobre cada tipo de operação
   for(i in transacoes){
 
     if(transacoes[i].infoOperacao == 'Pagar'){
@@ -60,25 +61,17 @@ function finalizar () {
       somaRecebidos += Number(transacoes[i].infoValor)
       saldoFinalRecebido.innerHTML = `Saldo recebido acumulado: ${somaRecebidos}`
     }
-
   }
-    
 
+    // calcula e exibe no título o saldo final do cliente
     var saldoTotal = document.getElementById('saldo-total')
     var soma = somaRecebidos - somaEnviados
     saldoTotal.innerHTML = `Controle Pix - Seu saldo atual: R$${soma}`
-
 }
 
-function limparSelect(campo) {
-  while (campo.length > 1) {
-      campo.remove(1);
-  }
-}
-
+// função que preenche o select com os dados vindo da API
 function preencherBancos(data) {
   let listaBancos = document.getElementById("select-banco");
-  // limparSelect(listaBancos)
 
   for (i in data) {
       const { isbp, code, fullName } = data[i];
@@ -90,6 +83,7 @@ function preencherBancos(data) {
   }
 }
 
+// função que consome a API dos bancos
 function carregarBancos() {
   fetch("https://brasilapi.com.br/api/banks/v1")
         .then(response => response.json())

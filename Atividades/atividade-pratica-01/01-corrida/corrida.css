@@ -1,3 +1,26 @@
+body {
+  background-image: linear-gradient(
+    to right,
+    rgb(175, 13, 13),
+    rgb(197, 197, 23)
+  );
+}
+h1 {
+  text-align: center;
+  margin: 40px auto;
+}
+
+label {
+  color: white;
+}
+
+th,
+tr {
+  padding: 10px;
+  border: 1px solid black;
+  color: black;
+}
+
 #container {
   display: flex;
   flex-direction: row;
@@ -5,33 +28,21 @@
   align-items: center;
 }
 
-h1 {
-  text-align: center;
-  margin: 40px auto;
-}
-th {
-  padding: 10px;
-  border: 1px solid black;
-}
-
-.linha .coluna {
-  border: 1px solid black;
-  padding: 3px;
-}
-
 #inputs {
   display: flex;
   flex-direction: column;
   padding: 100px;
+  height: 450px;
   border-right: 1px solid black;
   padding-right: 250px;
-}
-
-input {
-  width: 100%;
 }
 
 #btn-cadastrar {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+#resultado {
+  margin: auto;
+  text-align: center;
 }
