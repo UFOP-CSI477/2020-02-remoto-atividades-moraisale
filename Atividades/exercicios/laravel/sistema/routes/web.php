@@ -14,21 +14,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Models\Produto;
+use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\CompraController;
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('principal');
+})->name('principal');
 
-Route::get('/produtos/todos', function () {
-    $produtos = Produto::all();
-    return view('produtos', ['dados' => $produtos]);
-});
+Route::resource('/produtos', ProdutoController::class)->middleware('auth');
+Route::resource('/compras', CompraController::class);
+Route::resource('/users', UserController::class);
 
-Route::get('/produtos/{id}', function ($id) {
-    $produto = Produto::findOrFail($id);
-    if ($produto == null) {
-        return "ID inválido";
-    }
+// Route::get('/produtos/todos', function () {
+//     $produtos = Produto::all();
+//     return view('produtos', ['dados' => $produtos]);
+// });
 
-    return $produto;
-});
+// Route::get('/produtos/{id}', function ($id) {
+//     $produto = Produto::findOrFail($id);
+//     if ($produto == null) {
+//         return "ID inválido";
+//     }
+
+//     return $produto;
+// });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
