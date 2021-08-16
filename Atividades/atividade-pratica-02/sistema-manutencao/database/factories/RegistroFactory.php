@@ -22,7 +22,13 @@ class RegistoFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'id' => $this->faker->randomDigit(),
+
+            'equipamento_id' => $this->faker->randomDigit(),
+            'user_id' => $this->faker->randomDigit(),
+            'descricao' => $this->faker->randomLetter(),
+            'datalimite' => $this->faker->date(),
+            'tipo' => $this->faker->randomDigit()
         ];
     }
 }

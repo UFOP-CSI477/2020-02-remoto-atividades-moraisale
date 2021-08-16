@@ -15,7 +15,11 @@ class CreateEquipamentosTable extends Migration
     {
         Schema::create('equipamentos', function (Blueprint $table) {
             $table->id();
-            $table->string('nome', 50)->nullable(false);
+            $table->unsignedBigInteger('equipamento_id');
+            $table->unsignedBigInteger('user_id')->nullable(false);
+            $table->string('descricao', 191);
+            $table->date('datalimite');
+            $table->integer('tipo', 11);
             $table->timestamps();
         });
     }
