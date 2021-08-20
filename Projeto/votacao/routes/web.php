@@ -13,6 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use App\Models\Ponto;
+use App\Http\Controllers\PontoController;
+use App\Http\Controllers\VotoController;
+
+
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('principal');
+})->name('principal');
+
+Route::resource('/pontos', PontoController::class)->middleware('auth');
+Route::resource('/votos', VotoController::class)->middleware('auth');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

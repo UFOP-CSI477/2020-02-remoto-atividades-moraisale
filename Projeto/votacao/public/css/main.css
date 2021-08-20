@@ -1,0 +1,56 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+#nav-principal {
+    background-color: rgb(136, 40, 40);
+}
+
+#tabela-pautas {
+    width: 70%;
+    height: 70%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#btn-painelvoto {
+    width: 20%;
+    background-color: rgb(136, 40, 40);
+    color: white;
+}
+
+#btn-inclusaopt {
+    background-color: rgb(136, 40, 40);
+    padding: 5px;
+    color: white;
+}
+
+#tabela-votos {
+    width: 70%;
+    height: 70%;
+    margin: 50px auto;
+}
+
+#form-pauta {
+    width: 70%;
+    height: 70%;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#show-pauta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#btn-show {
+    display: flex;
+    flex-direction: row;
+}
