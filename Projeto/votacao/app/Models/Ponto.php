@@ -8,5 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Ponto extends Model
 {
     use HasFactory;
-    protected $fillable = ['numero', 'descricao', 'tipo'];
+    protected $fillable = ['descricao', 'tipo', 'voto'];
+
+    public function voto()
+    {
+        return $this->belongsTo(Voto::class);
+    }
 }

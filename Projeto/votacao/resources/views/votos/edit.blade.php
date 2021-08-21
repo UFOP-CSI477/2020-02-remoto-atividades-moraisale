@@ -2,16 +2,16 @@
 
 @section('conteudo')
 
-<form action="{{route('votos.update', $voto->id )}}" method="post">
+<h1 style="text-align: center; margin-top: 20px;">Editar voto</h1>
+
+<form action="{{route('votos.update', $voto->id )}}" method="post" id="edit-voto">
 
   @csrf
   @method('PUT')
 
-  <h1>Editar voto</h1>
-
   <div class="row-2">
-    <label for="tipo">Tipo</label>
-    <select class="form-control" name="tipo" id="tipo">
+    <label for="tipo" style="margin-left: 10px;">Tipo:</label>
+    <select class="form-control" name="tipo" id="tipo" style="width: 500px; margin: 0px 10px; margin-bottom: 10px;">
       <option value="Discussão">Discussão</option>
       <option value="Apreciação">Apreciação</option>
       <option value="Aprovação">Aprovação</option>
@@ -19,7 +19,7 @@
   </div>
 
   <div>
-    <input type="submit" value="Atualizar" class="btn btn-dark">
+    <input type="submit" value="Atualizar" class="btn btn-light">
   </div>
 </form>
 @endsection

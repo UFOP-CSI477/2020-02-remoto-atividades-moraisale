@@ -11,6 +11,7 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/main.css">
+  <link rel="shortcut icon" href="{{asset('imagens/decsi.png')}}" type="image/x-icon">
 </head>
 
 <body class="bg-light py-0 px-0">
@@ -18,16 +19,16 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
 
-        <img src="./decsi.svg" alt="">
-        <a class="nav-item nav-link active" href="{{route('principal')}}"> Home</a>
+        <a href="">
+          <img src="{{asset('imagens/decsi.png')}}" alt="" id="logo-decsi">
+        </a>
 
         <li class="nav-item dropdown">
           <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-            Assembléias
+            Assembléia em aberto
           </a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <a class="dropdown-item" href="{{route('pontos.index')}}">81ª</a>
-            <a class="dropdown-item" href="decsi.svg">81ª - Ofício</a>
           </div>
         </li>
         @guest

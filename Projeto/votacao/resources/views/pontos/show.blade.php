@@ -2,17 +2,16 @@
 
 @section('conteudo')
 
-<div id="show-pauta">
-  <h1>Dados da pauta inserida</h1>
+<h1 style="text-align: center; margin-top: 20px;">Dados da pauta inserida</h1>
 
-  <h3>Nº identificador: {{$ponto->id}}</h3>
-  <h3>Descrição: {{$ponto->descricao}}</h3>
-  <h3>Tipo: {{$ponto->tipo}}</h3>
+<div id="show-pauta">
+  <h3 style="text-align: center; margin-top: 10px;">Nº identificador: {{$ponto->id}}</h3>
+  <h3 style="text-align: center; margin-top: 10px;">Descrição: {{$ponto->descricao}}</h3>
+  <h3 style="text-align: center; margin-top: 10px;">Tipo: {{$ponto->tipo}}</h3>
 
   <div id="btn-show">
-    <a class="btn btn-dark" href="{{route('pontos.edit', $ponto->id)}}">Editar</a>
-    <a class="btn btn-dark" href="{{route('votos.create', $ponto->id)}}">Votar</a>
-    <a class="btn btn-dark" href="{{route('pontos.index')}}">Voltar</a>
+    <a class="btn btn-light" style="margin: 5px; width: 45%;" href="{{route('pontos.edit', $ponto->id)}}">Editar</a>
+    <a class="btn btn-light" style="margin: 5px; width: 45%;" href="{{route('pontos.index')}}">Voltar</a>
   </div>
 
 

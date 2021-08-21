@@ -17,7 +17,7 @@ class PontoController extends Controller
     public function index()
     {
         if (Auth::check()) {
-            $pontos = Ponto::orderBy('numero')->get();
+            $pontos = Ponto::orderBy('id')->get();
             return view('pontos.index', ['pontos' => $pontos]);
         } else {
             session()->flash('mensagem', 'Necessário login com e-mail docente!');
@@ -82,7 +82,7 @@ class PontoController extends Controller
         $ponto->fill($request->all());
         $ponto->save();
 
-        session()->flash('mensagem', 'Pauta atualizado');
+        session()->flash('mensagem', 'Pauta atualizada!');
 
         return redirect()->route('pontos.index');
     }

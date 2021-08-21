@@ -2,17 +2,16 @@
 
 @section('conteudo')
 
+<h1 style="text-align: center; margin-top: 20px;">Deposite seu voto</h1>
+
+
 <form action="{{route('votos.store')}}" method="post">
   @csrf
-  <h1 style="margin: 0px 10px;">Deposite seu voto</h1>
 
-
-  <div name="cadastrar">
-
-
-    <div class="form-group" style="margin: 0px 10px;">
-      <label for="ponto_id" style="font-weight: bold;">Pauta:</label>
-      <select name="ponto_id" id="ponto_id" class="form-control">
+  <div id="cadastrar-voto">
+    <div class="form-group">
+      <label for="ponto_id" style="margin-left: 10px;">Pauta:</label>
+      <select name="ponto_id" id="ponto_id" class="form-control" style="width: 500px; margin: 0px 10px;">
         @foreach($pontos as $p)
         <option value="{{$p->id}}">{{$p->id}}</option>
         @endforeach
@@ -27,12 +26,11 @@
         <option value="Reprova">Reprova</option>
         <option value="Abstém">Abstém</option>
       </select>
-
     </div>
 
-    <div>
-      <input type="submit" value="Cadastrar" class="btn btn-dark" style="margin: 10px">
-      <a class="btn btn-dark" href="{{route('pontos.index')}}" style="margin: 10px">Voltar</a>
+    <div btn-cadastrovoto>
+      <input type="submit" value="Cadastrar" class="btn btn-light" style="margin: 10px">
+      <a class="btn btn-light" href="{{route('pontos.index')}}" style="margin: 10px">Voltar</a>
     </div>
 
     @endsection
