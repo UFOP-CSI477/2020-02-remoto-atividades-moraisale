@@ -25,7 +25,7 @@
 
         <li class="nav-item dropdown">
           <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-            Assembléia em aberto
+            Próxima Assembléia
           </a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <a class="dropdown-item" href="{{route('pontos.index')}}">81ª</a>
@@ -40,7 +40,7 @@
 
         @if (Route::has('register'))
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('register') }}">{{ __('Registre-se') }}</a>
+          <a class="nav-link" href="{{ route('register') }}">{{ __('') }}</a>
         </li>
         @endif
         @else

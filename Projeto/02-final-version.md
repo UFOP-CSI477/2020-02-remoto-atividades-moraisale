@@ -1,5 +1,5 @@
 # **CSI606-2020-02 - Remoto - Trabalho Final - Resultados**
-## *Aluna(o): Princesa Leia (Luke Skywalker)*
+## *Alexandre Morais*
 
 --------------
 
@@ -10,7 +10,12 @@
   (Apresentar um breve resumo sobre o seu trabalho, indicando o contexto e as principais funcionalidades.)
 
 ### 1. Funcionalidades implementadas
-<!-- Descrever as funcionalidades que eram previstas e foram implementas. -->
+    - Ver as assembléias em aberto.
+    - Visualizar o ofício da assembléia.
+    - Visualizar as pautas da assembléias.
+    - Adicionar pautas.
+    - Votar em cada pauta.
+    - Visualizar os votos.
   
 ### 2. Funcionalidades previstas e não implementadas
 <!-- Descrever as funcionalidades que eram previstas e não foram implementas, apresentando uma breve justificativa do porquê elas não foram incluídas -->
@@ -22,7 +27,8 @@
 <!-- Descrever os principais desafios encontrados no desenvolvimento do trabalho, quais foram as dificuldades e como elas foram superadas e resolvidas. -->
 
 ### 5. Instruções para instalação e execução
-<!-- Descrever o que deve ser feito para instalar (ou baixar) a aplicação, o que precisa ser configurando (parâmetros, banco de dados e afins) e como executá-la. -->
+
+    - Utilizar o usuário (login: prof@decsi) e (senha: professor123).
 
 ### 6. Referências
 <!-- Referências podem ser incluídas, caso necessário. Utilize o padrão ABNT. -->

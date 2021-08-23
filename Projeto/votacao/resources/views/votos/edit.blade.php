@@ -9,17 +9,19 @@
   @csrf
   @method('PUT')
 
-  <div class="row-2">
-    <label for="tipo" style="margin-left: 10px;">Tipo:</label>
-    <select class="form-control" name="tipo" id="tipo" style="width: 500px; margin: 0px 10px; margin-bottom: 10px;">
-      <option value="Discussão">Discussão</option>
-      <option value="Apreciação">Apreciação</option>
-      <option value="Aprovação">Aprovação</option>
+  <div class="row-2" style="width: 500px; margin: 0px 10px;">
+    <label for="escolha">Escolha:</label>
+    <select class="form-control" name="escolha" id="escolha">
+      <option value="Aprova">Aprova</option>
+      <option value="Reprova">Reprova</option>
+      <option value="Abstém">Abstém</option>
     </select>
   </div>
 
-  <div>
-    <input type="submit" value="Atualizar" class="btn btn-light">
+  <div id="btn-editpt">
+    <input type="submit" style="margin: 5px; width: 90%;" value="Atualizar" class="btn btn-light">
+    <a class="btn btn-light" style="margin: 5px; width: 80%;" href="{{route('votos.show',  $voto->id)}}">Voltar</a>
+
   </div>
 </form>
 @endsection

@@ -4,7 +4,6 @@
 
 <h1 style="text-align: center; margin-top: 20px;">Editar dados da pauta</h1>
 
-
 <form action="{{route('pontos.update', $ponto->id )}}" method="post" id="edit-pauta">
 
   @csrf
@@ -25,7 +24,9 @@
   </div>
 
   <div id="btn-editpt">
-    <input type="submit" value="Atualizar" class="btn btn-light">
+    <input type="submit" style="margin: 5px; width: 90%;" value="Atualizar" class="btn btn-light">
+    <a class="btn btn-light" style="margin: 5px; width: 80%;" href="{{route('pontos.show',  $ponto->id)}}">Voltar</a>
+
   </div>
 </form>
 @endsection

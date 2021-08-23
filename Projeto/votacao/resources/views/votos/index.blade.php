@@ -26,6 +26,8 @@
       @endforeach
     </tbody>
   </table>
+  <a class="btn btn-light" id="btn-finalvoto" href="{{route('votos.index')}}" onsubmit="return confirm('Confirma exclusão da pauta?')">Enviar para avaliação</a>
+
 </div>
 
 

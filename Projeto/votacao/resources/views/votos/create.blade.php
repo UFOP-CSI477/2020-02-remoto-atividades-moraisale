@@ -13,7 +13,9 @@
       <label for="ponto_id" style="margin-left: 10px;">Pauta:</label>
       <select name="ponto_id" id="ponto_id" class="form-control" style="width: 500px; margin: 0px 10px;">
         @foreach($pontos as $p)
+        @if($p->tipo == 'Discussão' || $p->tipo == 'Aprovação')
         <option value="{{$p->id}}">{{$p->id}}</option>
+        @endif
         @endforeach
       </select>
 

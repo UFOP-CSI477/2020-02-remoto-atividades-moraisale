@@ -79,7 +79,7 @@ class VotoController extends Controller
 
         session()->flash('mensagem', 'Voto atualizado!');
 
-        return redirect()->route('pontos.index');
+        return redirect()->route('votos.index');
     }
 
     /**
